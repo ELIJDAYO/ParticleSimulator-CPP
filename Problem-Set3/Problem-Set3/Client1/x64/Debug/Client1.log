@@ -1,0 +1,4 @@
+﻿  Client1.cpp
+C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(409,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(594,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Client1.vcxproj -> C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\x64\Debug\Client1.exe
