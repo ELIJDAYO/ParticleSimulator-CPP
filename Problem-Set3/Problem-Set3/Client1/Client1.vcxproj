@@ -108,14 +108,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_WINSOCK_DEPRECATED_NO_WARNINGS;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\imgui-sfml-2.6.x\imgui-sfml-2.6.x;C:\Users\Angel\Desktop\STDISCM\Project2\imgui-master\imgui-master;C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\imgui-sfml-2.6.x\imgui-sfml-2.6.x;C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\imgui-master\imgui-master;C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\include;C:\Users\lizet\source\repos\ParticleSimulator-CPP_DIST_PART_BRANCH\imgui-sfml-2.6.x\imgui-sfml-2.6.x;C:\Users\lizet\source\repos\ParticleSimulator-CPP_DIST_PART_BRANCH\imgui-master\imgui-master;C:\Users\lizet\source\repos\ParticleSimulator-CPP_DIST_PART_BRANCH\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\include;C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\imgui-sfml-2.6.x\imgui-sfml-2.6.x;C:\Users\Angel\Desktop\STDISCM\Project2\imgui-master\imgui-master;C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;opengl32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\lib;C:\Users\lizet\source\repos\ParticleSimulator-CPP_DIST_PART_BRANCH\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\lib;C:\Users\Angel\Desktop\PSET3\ParticleSimulator-CPP\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-network.lib;opengl32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
