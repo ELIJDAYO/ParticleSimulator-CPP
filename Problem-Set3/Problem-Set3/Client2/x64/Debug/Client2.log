@@ -1,0 +1,17 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Client1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  imgui-SFML.cpp
+  Client2.cpp
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(217,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(253,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(288,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(323,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(439,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(479,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client2\Client2.cpp(522,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Client2.vcxproj -> C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\x64\Debug\Client2.exe

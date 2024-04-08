@@ -382,7 +382,7 @@ int main() {
         return 0;
     }
     else {
-        std::cout << "Client is on" << std::endl << "The Winsock dll found" << std::endl;
+        std::cout << "Client_A is on" << std::endl << "The Winsock dll found" << std::endl;
         std::cout << "The status: " << wsaData.szSystemStatus << std::endl;
     }
 
