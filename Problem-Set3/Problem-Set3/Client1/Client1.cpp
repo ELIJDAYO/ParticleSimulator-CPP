@@ -335,21 +335,63 @@ void handleInput(const std::string& clientId, sf::CircleShape& ball, float canva
     }
 }
 
-// Function to receive data from the server
-void receiveDataFromServer(SOCKET clientSocket, std::vector<Particle>& particles, std::mutex& mutex) {
-    while (true) {
-        // Receive particle position
-        sf::Vector2f position;
-        if (recv(clientSocket, reinterpret_cast<char*>(&position), sizeof(position), 0) == SOCKET_ERROR) {
-            std::cerr << "Error receiving particle position." << std::endl;
+
+// Function to receive serialized data from the server
+std::string receiveSerializedData(SOCKET clientSocket) {
+    std::string serializedData;
+
+    // Receive the length of the serialized data
+    int dataLength;
+    if (recv(clientSocket, reinterpret_cast<char*>(&dataLength), sizeof(dataLength), 0) == SOCKET_ERROR) {
+        std::cerr << "Error receiving data length." << std::endl;
+        return serializedData;
+    }
+
+    // Resize the string to hold the received data
+    serializedData.resize(dataLength);
+
+    // Receive the serialized data
+    int totalReceived = 0;
+    while (totalReceived < dataLength) {
+        int bytesReceived = recv(clientSocket, &serializedData[totalReceived], dataLength - totalReceived, 0);
+        if (bytesReceived == SOCKET_ERROR) {
+            std::cerr << "Error receiving serialized data." << std::endl;
+            serializedData.clear();
             break;
         }
+        totalReceived += bytesReceived;
+    }
+
+    return serializedData;
+}
+
+// Function to receive data from the server
+void receiveDataFromServer(SOCKET clientSocket, std::vector<Particle>& particles, std::mutex& mutex, sf::Vector2f& neighborSprite) {
+    while (true) {
+        // Receive serialized data from the server
+        std::string serializedData = receiveSerializedData(clientSocket);
+
+        // Deserialize the received data
+        std::istringstream iss(serializedData);
+        float receivedX, receivedY;
+        iss >> receivedX >> receivedY;
 
         // Lock the mutex before accessing the particles vector
         std::lock_guard<std::mutex> lock(mutex);
 
-        // Create a new particle with the received position and add it to the vector
-        particles.emplace_back(position.x, position.y);
+        // Update neighborSprite with received position
+        neighborSprite.x = receivedX;
+        neighborSprite.y = receivedY;
+
+
+        // Clear existing particles
+        particles.clear();
+
+        // Add received particles to the vector
+        float x, y;
+        while (iss >> x >> y) {
+            particles.emplace_back(x, y);
+        }
     }
 }
 
@@ -430,6 +472,7 @@ int main() {
     ImGui::SFML::Init(window);
 
     std::vector<Particle> particles;
+    sf::Vector2f neighborSprite(-1000, -1000); // Initialize neighborSprite
     float canvasWidth = 1280.0f;
     float canvasHeight = 720.0f;
     float speed = 100.0f;
@@ -493,7 +536,12 @@ int main() {
     // Mutex for synchronization
     std::mutex mutex;
 
-    std::thread receiveThread(receiveDataFromServer, clientSocket, std::ref(particles), std::ref(mutex));
+    std::thread receiveThread(receiveDataFromServer, clientSocket, std::ref(particles), std::ref(mutex), std::ref(neighborSprite));
+    // Create a secondary ball based on neighborSprite
+    sf::CircleShape secondaryBall(RADIUS);
+    secondaryBall.setFillColor(sf::Color::Blue);
+    secondaryBall.setPosition(neighborSprite);
+
 
     while (window.isOpen()) {
         sf::Event event;
@@ -546,6 +594,8 @@ int main() {
         renderParticles(particles, window, mutex, 1.0f);
 
         window.draw(ball);
+        window.draw(secondaryBall);
+
         particles.clear();
 
         ImGui::SFML::Render(window);

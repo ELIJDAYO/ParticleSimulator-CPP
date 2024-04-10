@@ -3,7 +3,7 @@ C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem
 C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(253,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(288,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(323,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(439,17): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(479,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(522,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(482,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(522,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Client1\Client1.cpp(570,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Client1.vcxproj -> C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\x64\Debug\Client1.exe

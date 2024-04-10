@@ -1,8 +1,8 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   BouncingParticle.cpp
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(469,98): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(500,17): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(599,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(484,9): warning C4101: 'byteCount': unreferenced local variable
-C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(483,10): warning C4101: 'buffer': unreferenced local variable
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(456,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(507,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(606,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(491,9): warning C4101: 'byteCount': unreferenced local variable
+C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\Project1\BouncingParticle.cpp(490,10): warning C4101: 'buffer': unreferenced local variable
   Project1.vcxproj -> C:\Users\edayo\Downloads\4y2t\STDISCM\ParticleSimulator-CPP\Problem-Set3\Problem-Set3\x64\Debug\Server.exe

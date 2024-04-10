@@ -450,26 +450,33 @@ std::string receiveSerializedData(SOCKET clientSocket) {
     return receivedData;
 }
 
-void sendParticles(SOCKET clientSocket, const std::vector<Particle>& particles) {
-    // Send client ID
-    /*
-    if (send(clientSocket, clientID.c_str(), clientID.size() + 1, 0) == SOCKET_ERROR) {
-        std::cerr << "Error sending client ID." << std::endl;
-        return;
+void sendSerializedData(SOCKET clientSocket, const std::string& serializedData) {
+    // Convert serialized data to a char array
+    const char* dataBuffer = serializedData.c_str();
+    int dataSize = serializedData.size();
+
+    // Send the data to the client socket
+    int bytesSent = send(clientSocket, dataBuffer, dataSize, 0);
+
+    // Check for errors
+    if (bytesSent == SOCKET_ERROR) {
+        std::cerr << "Error sending serialized data." << std::endl;
     }
-    */
-    // Serialize particle positions
-    std::vector<sf::Vector2f> positions;
-    positions.reserve(particles.size());
+}
+
+void sendParticles(SOCKET clientSocket, const std::vector<Particle>& particles, const sf::Vector2f& receivedPosition) {
+    // Serialize particle positions and received position
+    std::ostringstream oss;
+    oss << receivedPosition.x << " " << receivedPosition.y;
+
     for (const auto& particle : particles) {
-        positions.push_back(particle.getPosition());
+        oss << " " << particle.getPosition().x << " " << particle.getPosition().y;
     }
 
-    // Send particle positions
-    if (send(clientSocket, reinterpret_cast<const char*>(positions.data()), sizeof(sf::Vector2f) * positions.size(), 0) == SOCKET_ERROR) {
-        std::cerr << "Error sending particle positions." << std::endl;
-        return;
-    }
+    std::string serializedData = oss.str();
+
+    // Send serialized data to the client
+    sendSerializedData(clientSocket, serializedData);
 }
 
 void updateBallPositions(const std::vector<sf::Vector2f>& receivedPositions, std::vector<sf::CircleShape>& balls) {
@@ -702,8 +709,15 @@ void clientHandler(const std::vector<SOCKET>& clientSockets) {
         renderSprite(receivedPositions, mutex, window, 1.0f);
 
         // Draw ball
+        int i = 0;
+        size_t j = 1;
         for (auto& clientSocket : clientSockets) {
-            sendParticles(clientSocket, particles);
+            if (i == 1) {
+                j = 0;
+            }
+            std::cout << "Neighbor: " << receivedPositions[j].x << " " << receivedPositions[j].y << std::endl;
+            sendParticles(clientSocket, particles, receivedPositions[j]);
+            i++;
         }
 
         //window.draw(balls);
